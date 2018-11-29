@@ -1,6 +1,7 @@
 export interface Order {                                                                                           
     $key: string;                                                                                                  
-    customerName: string;                                                                                          
+    customerName: string;
+    customerId: string;                                                                                     
     plate: string;                                                                                                 
     plateImage: string;                                                                                            
     orderNumber: number;                                                                                           

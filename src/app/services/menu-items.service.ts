@@ -11,8 +11,9 @@ export class MenuItemsService {
   constructor(private firebase: AngularFireDatabase) { }
 
 
-  getMenuItems(){
-    return this.menuItemList = this.firebase.list('plates');
+  getMenuItems(category: string){
+    return this.menuItemList = this.firebase.list('plates', ref =>
+    ref.orderByChild('category').equalTo(category));
   }
 
 }

@@ -9,7 +9,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MainNavComponent } from './main-nav/main-nav.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, 
-  MatListModule, MatProgressSpinnerModule, MatCardModule, MatDialogModule, MatFormFieldModule, MatInputModule} from '@angular/material';
+  MatListModule, MatProgressSpinnerModule, MatCardModule, MatDialogModule, MatFormFieldModule, MatInputModule, MatMenuModule} from '@angular/material';
 import { MenuItemsService } from './services/menu-items.service';
 
 
@@ -22,6 +22,8 @@ import { MenuItemMoreInfoComponent } from './menu-item-more-info/menu-item-more-
 import { MenuItemOrderComponent } from './menu-item-order/menu-item-order.component';  
 import { OrdersService } from './services/orders.service';
 import { FormsModule } from '@angular/forms';
+import { LoginComponent } from './login/login.component';
+import { AuthService } from './services/auth.service';
 
 @NgModule({
   declarations: [
@@ -29,7 +31,8 @@ import { FormsModule } from '@angular/forms';
     MainNavComponent,
     MenuListComponent,
     MenuItemMoreInfoComponent,
-    MenuItemOrderComponent
+    MenuItemOrderComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -47,6 +50,8 @@ import { FormsModule } from '@angular/forms';
     MatFormFieldModule,
     MatInputModule,
     MatDialogModule,
+    MatButtonModule,
+    MatMenuModule,
     FormsModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
@@ -57,7 +62,7 @@ import { FormsModule } from '@angular/forms';
     MenuItemMoreInfoComponent,
     MenuItemOrderComponent
   ],
-  providers: [MenuItemsService, OrdersService],
+  providers: [MenuItemsService, OrdersService, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
