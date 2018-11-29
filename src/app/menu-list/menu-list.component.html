@@ -1,0 +1,14 @@
+<mat-spinner *ngIf="showSpinner"></mat-spinner>
+<mat-card class="menu-item-card" *ngFor="let plate of data">
+  <mat-card-header>
+    <!-- <div mat-card-avatar class="example-header-image"></div> -->
+    <mat-card-title>{{plate.name}}</mat-card-title>
+    <mat-card-subtitle>${{plate.price}}</mat-card-subtitle>
+  </mat-card-header>
+  <img mat-card-image [src]="plate.image" alt="Photo of a Shiba Inu">
+
+  <mat-card-actions align="end">
+    <button mat-button (click)="openDialogMoreInfo(plate)">More Info</button>
+    <button mat-button (click)="openDialogOrder(plate)">Order</button>
+  </mat-card-actions>
+</mat-card>

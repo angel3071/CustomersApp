@@ -1,0 +1,11 @@
+<h2 mat-dialog-title>{{data.header}}</h2>
+<mat-dialog-content class="mat-typography">
+    <h3>{{data.paragraph}}</h3>
+      <mat-form-field class="example-full-width">
+        <textarea matInput [(ngModel)]="data.comment" placeholder="Comentarios"></textarea>
+      </mat-form-field>
+  </mat-dialog-content>
+  <mat-dialog-actions align="end">
+    <button mat-button [mat-dialog-close]="false">Regresar</button>
+    <button mat-button [mat-dialog-close]="data.comment" cdkFocusInitial>Ordenar</button>
+  </mat-dialog-actions>
