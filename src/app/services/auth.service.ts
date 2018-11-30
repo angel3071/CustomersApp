@@ -24,8 +24,19 @@ export class AuthService {
         }
       );
   }
-  getUserId(){ return ''; }
-  getDisplayName(){ return ''; }
+  getUserId(){ 
+    if(this.userDetails != null)
+      return this.userDetails.email;
+    else 
+      return '';
+   }
+  getDisplayName(){ 
+    if(this.userDetails != null)
+      return this.userDetails.displayName;
+    else 
+      return ''; 
+    }
+
 
 
 
@@ -34,7 +45,7 @@ export class AuthService {
   signInWithGoogle() {
     return this._firebaseAuth.auth.signInWithPopup(
       new firebase.auth.GoogleAuthProvider()
-    )
+    );
   }
 
   signInRegular(email, password) {

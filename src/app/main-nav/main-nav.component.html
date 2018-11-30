@@ -3,13 +3,24 @@
       [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
       [mode]="(isHandset$ | async) ? 'over' : 'side'"
       [opened]="!(isHandset$ | async)">
-    <mat-toolbar>Menu</mat-toolbar>
+    <mat-toolbar class="toolbar">
+        <mat-toolbar-row>
+            <span>OrdenApp</span>
+          </mat-toolbar-row>
+        
+          <mat-toolbar-row>
+            <span class="subtitle">{{authService.getDisplayName()}}</span>
+          </mat-toolbar-row>
+    </mat-toolbar>
     <mat-nav-list>
-      <a mat-list-item routerLink="/entry"><i class="fas fa-utensils"></i><p> Entradas</p></a>
-      <a mat-list-item routerLink="/meat"><mat-icon>face</mat-icon>Carnes</a>
-      <a mat-list-item routerLink="/fish"><i class="fas fa-utensils"></i>Pescados</a>
-      <a mat-list-item routerLink="/drink"><i class="fas fa-utensils"></i>Bebidas</a>
-      <a mat-list-item routerLink="/dessert"><i class="fas fa-utensils"></i>Postres</a>
+      <a mat-list-item routerLink="/entry"><mat-icon>local_dining</mat-icon> Entradas</a>
+      <a mat-list-item routerLink="/meat"><mat-icon>fastfood</mat-icon>Carnes</a>
+      <a mat-list-item routerLink="/pizza"><mat-icon>local_pizza</mat-icon>Pizzas</a>
+      <a mat-list-item routerLink="/drink"><mat-icon>local_bar</mat-icon>Bebidas</a>
+      <a mat-list-item routerLink="/dessert"><mat-icon>cake</mat-icon>Postres</a>
+      <mat-divider></mat-divider>
+      <a mat-list-item routerLink="/checkout"><mat-icon>receipt</mat-icon>Cuenta</a>
+      <a mat-list-item (click)="logout()"><mat-icon>exit_to_app</mat-icon>Salir</a>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
@@ -23,8 +34,12 @@
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
       <span>{{headerTitle}}</span>
+      <span class="spacer"></span>
+      <button mat-icon-button routerLink="/checkout">
+        <mat-icon *ngIf="orders" [matBadge]="orders.length" matBadgeColor="accent" matBadgePosition="above after">shopping_cart</mat-icon>
+      </button>
     </mat-toolbar>
     <!-- Add Content Here -->
-    <app-menu-list></app-menu-list>
+    <ng-content></ng-content>
   </mat-sidenav-content>
 </mat-sidenav-container>

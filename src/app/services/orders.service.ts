@@ -19,4 +19,8 @@ export class OrdersService {
   insertOrder(order: Order){
     this.firebase.list('orders').push(order);
   }
+  getNotifications(customerId: string){
+    return this.orderList = this.firebase.list('orders', ref =>
+    ref.orderByChild('customerId').equalTo(customerId));
+  }
 }

@@ -7,6 +7,8 @@ export interface Order {
     orderNumber: number;                                                                                           
     dateTime: string;                                                                                              
     status: string;                                                                                                
-    comments: string;                                                                                              
+    comments: string;    
+    platePrice: number;  
+    plateName: string;                                                                                        
                                                                                                                    
 }    

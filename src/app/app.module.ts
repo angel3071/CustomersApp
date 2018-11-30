@@ -9,7 +9,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MainNavComponent } from './main-nav/main-nav.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, 
-  MatListModule, MatProgressSpinnerModule, MatCardModule, MatDialogModule, MatFormFieldModule, MatInputModule, MatMenuModule} from '@angular/material';
+  MatListModule, MatProgressSpinnerModule, MatCardModule, MatDialogModule, MatFormFieldModule, MatInputModule, MatMenuModule, MatBadgeModule, MatTableModule} from '@angular/material';
 import { MenuItemsService } from './services/menu-items.service';
 
 
@@ -24,6 +24,9 @@ import { OrdersService } from './services/orders.service';
 import { FormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login.component';
 import { AuthService } from './services/auth.service';
+import { CheckoutComponent } from './checkout/checkout.component';
+import { MainNavWrapperListComponent } from './main-nav-wrapper-list/main-nav-wrapper-list.component';
+import { MainNavWrapperCheckoutComponent } from './main-nav-wrapper-checkout/main-nav-wrapper-checkout.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +35,10 @@ import { AuthService } from './services/auth.service';
     MenuListComponent,
     MenuItemMoreInfoComponent,
     MenuItemOrderComponent,
-    LoginComponent
+    LoginComponent,
+    CheckoutComponent,
+    MainNavWrapperListComponent,
+    MainNavWrapperCheckoutComponent
   ],
   imports: [
     BrowserModule,
@@ -52,6 +58,8 @@ import { AuthService } from './services/auth.service';
     MatDialogModule,
     MatButtonModule,
     MatMenuModule,
+    MatTableModule,
+    MatBadgeModule,
     FormsModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,

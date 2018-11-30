@@ -15,3 +15,19 @@
   top: 0;
   z-index: 1;
 }
+.toolbar {
+  background-image: url("/assets/cafe-chairs-menu-6267.jpg");
+}
+.example-fill-remaining-space {
+  /* This fills the remaining space, by using flexbox. 
+     Every toolbar row uses a flexbox row layout. */
+  flex: 1 1 auto;
+}
+
+.subtitle {
+  font-size: 12px;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}

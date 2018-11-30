@@ -21,12 +21,16 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
 
   }
+  login(){
+    this.router.navigate(['']);
+  }
 
   signInWithGoogle() {
     this.authService.signInWithGoogle()
     .then((res) => {
-        this.router.navigate(['entry'])
-      })
+      console.log('entering the then');
+      this.router.navigate(['entry']);
+    })
     .catch((err) => console.log(err));
   }
 
@@ -39,6 +43,7 @@ export class LoginComponent implements OnInit {
       })
       .catch((err) => console.log('error: ' + err));
   }
+  
 
 
 

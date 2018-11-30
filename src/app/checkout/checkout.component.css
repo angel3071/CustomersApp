@@ -1,0 +1,11 @@
+table {
+    width: 100%;
+  }
+  .menu-item-card {
+    max-width: 400px;
+    margin: 10px;
+  }
+  
+  tr.mat-footer-row {
+    font-weight: bold;
+  }

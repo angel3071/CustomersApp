@@ -67,7 +67,9 @@ export class MenuListComponent implements OnInit {
           orderNumber: 100,                                                                                          
           dateTime: new Date().toString(),                                                                                              
           status: 'ordered',                                                                                               
-          comments: '' 
+          comments: '',
+          platePrice: plate.price,
+          plateName: plate.name
         } as Order);
       } 
       
@@ -96,7 +98,9 @@ export class MenuListComponent implements OnInit {
           orderNumber: 100,                                                                                          
           dateTime: new Date().toString(),                                                                                              
           status: 'ordered',                                                                                               
-          comments: this.comment
+          comments: this.comment,
+          platePrice: plate.price,
+          plateName: plate.name
         } as Order);
       } 
       
