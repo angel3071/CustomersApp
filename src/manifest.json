@@ -1,7 +1,7 @@
 {
-  "name": "CustomersApp",
-  "short_name": "CustomersApp",
-  "theme_color": "#1976d2",
+  "name": "OrdenApp",
+  "short_name": "OrdenApp",
+  "theme_color": "#e91e63",
   "background_color": "#fafafa",
   "display": "standalone",
   "scope": "/",
